@@ -48,20 +48,7 @@ Pinout Micro-Due:
 * Tx = Rx2/Rx3 
 
 WARNING: the Micro outputs 5V and the Due takes 3.3V, so don't forget to place a voltage divider in-between like follows:
-  Micro Tx
-  |
-  >
-  > 1k resistor
-  >
-  |
-  |- Due Rx
-  |
-  >
-  > 2k resistor
-  >
-  |
-  GND
-
+  Micro Tx - 1k resistor - Due Rx - 2k resistor - GND
 
 Note: the additional circuitry (see below) and 2-pin connector allows to send a 12V analog signal to a NIDAQ card. This implies using a 12V power supply for the Due (instead of 5V).
 
