@@ -28,4 +28,5 @@ Those Micro's are sending XY displacement to an Arduino Due, which computes the 
 
 From there other informations can be computed, like speed.
 
-![](spherical_treadmill.jpg =200x)
+![picture](spherical_treadmill.jpg = 200x)
+![picture](https://github.com/aphilip442/Spherical_treadmill/blob/master/spherical_treadmill.jpg)
