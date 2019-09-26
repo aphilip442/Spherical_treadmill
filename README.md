@@ -1,5 +1,7 @@
 # Spherical_treadmill
 
+![picture](https://github.com/aphilip442/Spherical_treadmill/blob/master/spherical_treadmill.jpg)
+
 Mouse sensors and Arduinos to get the yaw-pitch-roll of an air-floating ball.
 
 ## Motivation
@@ -28,4 +30,40 @@ Those Micro's are sending XY displacement to an Arduino Due, which computes the 
 
 From there other informations can be computed, like speed.
 
-![picture](https://github.com/aphilip442/Spherical_treadmill/blob/master/spherical_treadmill.jpg)
+### Connections
+
+Pinout Sensor-Micro:
+* MI = MISO
+* MO = MOSI
+* SS = Slave Select / Chip Select
+* SC = SPI Clock
+* MT = Motion (active low interrupt line)
+* RS = Reset
+* GD = Ground
+* VI = Voltage in up to +5.5V
+
+Pinout Micro-Due:
+* GND = GND
+* Vin = 5V
+* Tx = Rx2/Rx3 
+
+WARNING: the Micro outputs 5V and the Due takes 3.3V, so don't forget to place a voltage divider in-between like follows:
+  Micro Tx
+  |
+  >
+  > 1k resistor
+  >
+  |
+  |- Due Rx
+  |
+  >
+  > 2k resistor
+  >
+  |
+  GND
+
+
+Note: the additional circuitry (see below) and 2-pin connector allows to send a 12V analog signal to a NIDAQ card. This implies using a 12V power supply for the Due (instead of 5V).
+
+
+![picture](https://github.com/aphilip442/Spherical_treadmill/blob/master/pwm_to_analog_circuit.png)
