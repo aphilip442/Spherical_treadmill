@@ -25,8 +25,6 @@ void loop() {
   bool rec = false;
   bool S1received = false;
   if (Serial1.available() > 30) {
-    //Serial.println(Serial1.available());
-    
     int it = 0;
     while(Serial1.available() > 0  && !S1received && it < 30){
       c = Serial1.read();
@@ -51,8 +49,6 @@ void loop() {
   rec = false;
   bool S2received = false;
   if (Serial2.available() > 30) {
-    //Serial.println(Serial1.available());
-    
     int it = 0;
     while(Serial2.available() > 0  && !S2received && it < 30){
       c = Serial2.read();
@@ -80,7 +76,6 @@ void loop() {
     s2 = "0\t0";
   }
   String xy = s1 + '\t' + s2;
-  //Serial.println(xy);
 
   int x0 = getValue(xy, '\t', 0).toInt();
   int y0 = getValue(xy, '\t', 1).toInt();
@@ -91,7 +86,7 @@ void loop() {
   int pitch = (y0 + y1)/2;
   int roll = (y0 - y1)/2;
 
-  int speed = 125;//0-255
+  int speed = 125;//0-255 //TODO: speed function
   analogWrite(to_NIDAQ, speed);
   tot = tot + pitch;
   Serial.println(String(yaw) + '\t' + String(pitch) + '\t' + String(roll)+ '\t' + String(tot));
