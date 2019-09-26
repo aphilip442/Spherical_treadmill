@@ -27,3 +27,5 @@ I use the PWM3360DM-Burst script, which is included in this repo.
 Those Micro's are sending XY displacement to an Arduino Due, which computes the yaw-pitch-roll displacements of the ball.
 
 From there other informations can be computed, like speed.
+
+![](spherical_treadmill.jpg =200x)
