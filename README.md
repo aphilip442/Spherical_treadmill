@@ -51,6 +51,7 @@ WARNING: the Micro outputs 5V and the Due takes 3.3V, so don't forget to place a
   Micro Tx - 1k resistor - Due Rx - 2k resistor - GND
 
 Note: the additional circuitry (see below) and 2-pin connector allows to send a 12V analog signal to a NIDAQ card. This implies using a 12V power supply for the Due (instead of 5V).
-
+You should add a 10uF decoupling capacitor between the Vin and GND of your Due (as close as possible to the pins), and a 0.1uF decoupling capacitor between the Vin and GND of the LM358 (as close as possible to the pins).
+This will result in a much cleaner output analog signal.
 
 ![picture](https://github.com/aphilip442/Spherical_treadmill/blob/master/pwm_to_analog_circuit.png)
